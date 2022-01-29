@@ -110,6 +110,16 @@
 		border = 0;
 		color = '#000000';
 		colorBorder = '#ff73b9';
+		hShadow = 0;
+		vShadow = 0;
+		blurShadow = 0;
+		spreadShadow = 0;
+		colorShadow = '#000000';
+		hShadowIn = 0;
+		vShadowIn = 0;
+		blurShadowIn = 0;
+		spreadShadowIn = 0;
+		colorShadowIn = '#000000';
 	}
 
 	// Nav //
@@ -409,13 +419,38 @@
 		<!-- Color -->
 		<div class:open={!openColor}>
 			<div class="value-custom color-grid" id="color-value">
-				<lable for="colorpicker" id="color-label">Color</lable>
-				<input class="picker" type="color" id="colorpicker" bind:value={color}>
-				<p id="color-code">Hex : <spac style="font-weight: 700;">{color}</spac></p>
 
-				<lable for="colorpickerBorder" id="color-border-label">Border color</lable>
-				<input class="picker" type="color" id="colorpickerBorder" bind:value={colorBorder}>
-				<p id="color-border-code">Hex : <spac style="font-weight: 700;">{colorBorder}</spac></p>
+				<div class="openColor">
+					<div class="color-items">
+						<lable class="colorLabel" for="colorpicker" id="color-label">Color</lable>
+						<input class="picker" type="color" id="colorpicker" bind:value={color}>
+						<p class="colorCode" id="color-code">Hex : <spac style="font-weight: 700;">{color}</spac></p>
+					</div>
+				</div>
+
+				<div class="openColor" class:open={!openBorder}>
+					<div class="color-items">
+						<lable class="colorLabel" for="colorpickerBorder" id="color-border-label">Border color</lable>
+						<input class="picker" type="color" id="colorpickerBorder" bind:value={colorBorder}>
+						<p class="colorCode" id="color-border-code">Hex : <spac style="font-weight: 700;">{colorBorder}</spac></p>
+					</div>
+				</div>
+
+				<div class="openColor" class:open={!openShadow}>
+					<div class="color-items">
+						<lable class="colorLabel" for="colorpickerShadow" id="color-shadow-label">Shadow color</lable>
+						<input class="picker" type="color" id="colorpickerShadow" bind:value={colorShadow}>
+						<p class="colorCode" id="color-shadow-code">Hex : <spac style="font-weight: 700;">{colorShadow}</spac></p>
+					</div>
+				</div>
+
+				<div class="openColor" class:open={!openShadowInset}>
+					<div class="color-items">
+						<lable class="colorLabel" for="colorpickerShadowIn" id="color-shadow-in-label">Shadow color (inset)</lable>
+						<input class="picker" type="color" id="colorpickerShadowIn" bind:value={colorShadowIn}>
+						<p class="colorCode" id="color-shadow-in-code">Hex : <spac style="font-weight: 700;">{colorShadowIn}</spac></p>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -817,40 +852,41 @@
 	/**************************************/
 
 	/*Grid size*/
-	#color-label{
+
+	.colorLabel{
 		grid-area: cl;
 	}
-	#colorpicker{
-		grid-area: c;
-		width: 75%;
+	.picker{
+		grid-area: p;
+		width: 5em;
 		height: 3em;
 	}
-	#color-code{
+	.colorCode{
 		grid-area: cc;
 	}
 
-	#color-border-label{
-		grid-area: cbl;
-	}
-	#colorpickerBorder{
-		grid-area: cb;
-		width: 75%;
-		height: 3em;
-	}
-	#color-border-code{
-		grid-area: cbc;
+	.color-items{
+		display: grid;
+		grid-template-columns: 10em;
+		grid-template-rows: 25% 50% 25%;
+		grid-template-areas:
+		"cl"
+		"p"
+		"cc";
+
+		padding: 10px;
+
+		justify-items: center;
+    	align-content: center;
 	}
 
 	.color-grid{
 		display: grid;
-		grid-template-columns: 75% 75%;
+		grid-template-columns: auto auto;
 		grid-template-rows: auto;
-		grid-template-areas:
-		'cl cbl'
-		'c cb'
-		'cc cbc';
+		grid-gap: 10%;
 		
-		margin: 10px;
+		margin: 10px 10px 20px;
 		padding: 10px;
 
 		justify-items: center;
