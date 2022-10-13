@@ -1,7 +1,7 @@
 # วิธีโคลนไฟล์
 1. กด Windows + R
 2. พิมพ์ cmd
-3. ใช้คำสั่ง ``` npx degit Thianrawit/Gradient-circle-Svelte svelte-app ```
+3. ใช้คำสั่ง ``` npx degit Thianrawit/MakeObject-Svelte svelte-app ```
 4. รอสักพัก
 5. ใช้คำสั่ง ``` cd svelte-app ``` เพื่อเปิดเข้าไฟล์งาน
 6. ใช้คำสั่ง ``` npm i ``` เพื่อติดตั้ง package ที่จำเป็น
