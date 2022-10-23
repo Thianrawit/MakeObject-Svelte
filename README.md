@@ -8,6 +8,9 @@
 7. ใช้คำสั่ง ``` npm run dev ``` เพื่อเปิดดูผลลัพท์ของงาน
 ---
 
+Preview
+Codepen : https://codepen.io/thianrawit/pen/qBPbWao
+
 # Clone my app
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
